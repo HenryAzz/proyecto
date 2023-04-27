@@ -6,7 +6,7 @@ export const sequelize = new Sequelize({
   database: config.dbName,
   password: config.dbPassword,
   username: config.dbUser,
-  port: 5000,
+  port: Number(config.dbPort),
   storage: ":memory:",
   models: [__dirname + "/models"],
 });
