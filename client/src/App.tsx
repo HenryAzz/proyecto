@@ -1,11 +1,11 @@
-import { Button, Box, Typography } from "@mui/material";
+import { Box } from "@mui/material";
 import "./App.css";
+import { FirstFilters } from "./components/firstFilters/FirstFilters";
 
 function App() {
   return (
     <Box>
-      <Button variant="outlined">hola</Button>
-      <Typography variant="subtitle2">Tests</Typography>
+      <FirstFilters />
     </Box>
   );
 }
