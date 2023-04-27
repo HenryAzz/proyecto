@@ -11,7 +11,7 @@ export class User extends Model<User> {
     autoIncrement: true,
     unique: true,
   })
-  userId!: number;
+  id!: number;
   @Column
   rol!: string;
   @Column

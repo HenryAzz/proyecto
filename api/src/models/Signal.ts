@@ -32,8 +32,12 @@ export class Signal extends Model<Signal> {
   documentation!: string;
 
   // RELACIIONAR CON PROPERTY (PROPIEDAD)
-  // @HasOne(() => Property)
-  // propertyId!: Property;
+  @ForeignKey(() => Property)
+  @Column
+  propertyId!: number;
+
+  @BelongsTo(() => Property)
+  property!: Property;
 
   // RELACIIONAR CON BROKER (EMPLEADO)
   @ForeignKey(() => Broker)
@@ -44,8 +48,12 @@ export class Signal extends Model<Signal> {
   broker!: Broker;
 
   // RELACIONAR CON USER (CLIENTE)
-  // @HasOne(() => User)
-  // userId!: number;
+  @ForeignKey(() => User)
+  @Column
+  userId!: number;
+
+  @BelongsTo(() => User)
+  user!: User;
 }
 
 // //ejemplo:

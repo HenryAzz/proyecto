@@ -11,7 +11,7 @@ export class Property extends Model<Property> {
     autoIncrement: true,
     unique: true,
   })
-  propertyId!: number;
+  id!: number;
 
   @Column
   type!: string;
