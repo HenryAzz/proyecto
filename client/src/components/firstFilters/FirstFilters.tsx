@@ -1,13 +1,16 @@
-import { Button, Grid } from "@mui/material";
+import { Button, Grid, useTheme, useMediaQuery } from "@mui/material";
 
 export const FirstFilters = () => {
+  const theme = useTheme();
+  const isMediumScreen = useMediaQuery(theme.breakpoints.up("md"));
+
   return (
-    <Grid container spacing={2}>
+    <Grid container spacing={2} sx={{ display: "flex" }}>
       <Grid
         item
         sx={{
           display: "flex",
-          flexDirection: "column",
+          flexDirection: isMediumScreen ? "row" : "column",
         }}
       >
         <Button variant="contained" sx={{ m: 2 }}>
@@ -17,7 +20,7 @@ export const FirstFilters = () => {
           Comprar
         </Button>
         <Button variant="contained" sx={{ m: 2 }}>
-          Vender/rentar
+          Vender
         </Button>
         <Button variant="contained" sx={{ m: 2 }}>
           Tasar
