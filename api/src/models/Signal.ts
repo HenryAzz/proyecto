@@ -65,9 +65,6 @@ export class Signal extends Model<Signal> {
 //  @Column
 //  lastName!: string;
 
-//  @CreatedAt
-//  @Column
-//  createdAt!: Date;
 
 //  @UpdatedAt
 //  @Column

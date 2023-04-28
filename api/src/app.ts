@@ -1,4 +1,4 @@
-import express, { Request, Response, Application } from "express";
+import express, { Request, Response, Application, NextFunction } from "express";
 import routes from "./routes/index";
 var cookieParser = require("cookie-parser");
 var morgan = require("morgan");
@@ -6,27 +6,27 @@ var cors = require("cors");
 
 const app: Application = express();
 
-app.use("/api", routes);
-
-app.use(express.urlencoded({ extended: true, limit: "50mb" })); //middleware
-app.use(express.json({ limit: "50mb" }));
-app.use(cookieParser());
-app.use(morgan("dev"));
 
 app.use(
   cors({
-    origin: "http://localhost:3000/",
+    origin: "http://localhost:3001",
     credentials: true,
     methods: ["GET", "POST", "OPTIONS", "PUT", "DELETE"],
     allowedHeaders: ["Origin", "X-Requested-With", "Content-Type", "Accept"],
   })
 );
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true, limit: "50mb" })); //middleware
+app.use(cookieParser());
+app.use(morgan("dev"));
+
+
 
 interface error {
   status: number;
   message: string;
 }
-app.use((err: error, req: Request, res: Response) => {
+app.use((err: error, req: Request, res: Response , next:NextFunction) => {
   // eslint-disable-line no-unused-vars
   const status = err.status || 500;
   const message = err.message || err;
@@ -34,4 +34,5 @@ app.use((err: error, req: Request, res: Response) => {
   res.status(status).send(message);
 });
 
+app.use("/", routes);
 export default app;

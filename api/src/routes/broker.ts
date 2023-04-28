@@ -6,7 +6,7 @@ router.get('/', (req: Request, res: Response) => {
 });
 
 router.post('/', (req: Request, res: Response) => {
- res.send('soy la ruta post!');
+ res.send('soy la ruta posssst!');
 });
 
 export default router;

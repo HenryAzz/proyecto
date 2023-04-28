@@ -20,15 +20,17 @@ export class Property extends Model<Property> {
   address!: string;
 
   @Column
-  spaces!: string;
+  spaces!: number;
 
   @Column({
     type: DataType.FLOAT,
   })
   price!: number;
 
-  @Column
-  pictures!: string;
+  @Column({
+    type: DataType.ARRAY(DataType.JSON),
+  })
+  pictures!: object;
 
   @Column({
     type: DataType.INTEGER,
@@ -60,7 +62,7 @@ export class Property extends Model<Property> {
   service!: string;
 
   @Column
-  status!: string;
+  situation!: string;
 
   @Column({
     type: DataType.FLOAT,
