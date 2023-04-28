@@ -1,7 +1,12 @@
 import "./App.css";
+import { FirstFilters } from "./components/firstFilters/FirstFilters";
 
 function App() {
-  return <div>hola</div>;
+  return (
+    <div>
+      <FirstFilters />
+    </div>
+  );
 }
 
 export default App;
