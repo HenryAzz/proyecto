@@ -13,71 +13,78 @@ export class Property extends Model<Property> {
   })
   id!: number;
 
-  @Column
-  type!: string;
+  @Column({allowNull: false})
+    type!: string;
 
-  @Column
+  @Column({allowNull: false})
   address!: string;
 
-  @Column
+  @Column({allowNull: false})
   spaces!: number;
 
   @Column({
+    allowNull: false,
     type: DataType.FLOAT,
   })
   price!: number;
 
   @Column({
+    allowNull: false,
     type: DataType.ARRAY(DataType.JSON),
   })
   pictures!: object;
 
   @Column({
+    allowNull: false,
     type: DataType.INTEGER,
   })
   floors!: number;
 
   @Column({
+    allowNull: false,
     type: DataType.FLOAT,
   })
   covered_area!: number;
 
   @Column({
+    allowNull: false,
     type: DataType.FLOAT,
   })
   bathroom!: number;
 
   @Column({
+    allowNull: false,
     type: DataType.INTEGER,
   })
   bedroom!: number;
 
-  @Column
+  @Column({allowNull: false})
   furnished!: Boolean;
 
-  @Column
+  @Column({allowNull: false})
   description!: string;
 
-  @Column
-  service!: string;
+ 
 
-  @Column
+  @Column({allowNull: false})
   situation!: string;
 
   @Column({
+    allowNull: false,
     type: DataType.FLOAT,
   })
   total_area!: number;
 
   @Column({
+    allowNull: false,
     type: DataType.FLOAT,
   })
   antiquity!: number;
 
-  @Column
+  @Column({allowNull: false})
   operation!: string;
 
-  @Column
+  @Column({allowNull: false})
   owner!: string;
 }
 

@@ -24,11 +24,11 @@ export class Signal extends Model<Signal> {
     unique: true,
   })
   id!: number;
-  @Column
+  @Column({allowNull: false,})
   operation!: string;
-  @Column
+  @Column({allowNull: false,})
   status!: string;
-  @Column
+  @Column({allowNull: false,})
   documentation!: string;
 
   // RELACIIONAR CON PROPERTY (PROPIEDAD)

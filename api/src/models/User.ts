@@ -12,17 +12,17 @@ export class User extends Model<User> {
     unique: true,
   })
   id!: number;
-  @Column
+  @Column({allowNull: false})
   rol!: string;
-  @Column
+  @Column({allowNull: false})
   email!: string;
-  @Column
+  @Column({allowNull: false})
   password!: string;
-  @Column
+  @Column({allowNull: false})
   person_type!: string;
-  @Column
+  @Column({allowNull: false})
   name!: string;
-  @Column
+  @Column({allowNull: false})
   avatar!: string;
 }
 
