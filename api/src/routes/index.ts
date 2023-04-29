@@ -1,8 +1,8 @@
 import {Router} from 'express';
-import routesUser from './user';
-import routesBroker from './broker';
-import routesProperty from './property';
-import routesSignal from './signal';
+import routesUser from './user/user';
+import routesBroker from './brokers/broker';
+import routesProperty from './property/pRoot';
+import routesSignal from './signal/signal';
 
 const router = Router();
 
@@ -12,6 +12,7 @@ router.use('/broker', routesBroker);
 
 router.use('/property', routesProperty);
 
-router.use('/property', routesSignal);
+router.use('/signal', routesSignal);
+
 
 export default router;
