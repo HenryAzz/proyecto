@@ -5,7 +5,7 @@ import { Landing } from "./components/landing/Landing";
 import { LogIn } from "./components/logIn/LogIn";
 import { Registro } from "./components/registro/Registro";
 
-
+//holaaaaa 
 function App() {
   return (
     <div>
